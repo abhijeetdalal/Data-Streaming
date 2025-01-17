@@ -16,7 +16,7 @@ This project contains Spring boot application that represents the Stream produce
 * Run this spring boot application
   * Pre-requisite: 
   * A [web socket server](./../websocket-server), which this application will listen to.
-  * Put the web socket URL as value of variable -> [MEETUP_RSVPS_ENDPOINT](dataStreamProducer/src/main/java/com/collection/tier/DataStreamProducerApplication.java) 
+  * Put the web socket URL as value of variable -> [MEETUP_RSVPS_ENDPOINT](src/main/java/com/collection/tier/DataStreamProducerApplication.java) 
   * Run the spring boot application
   ````
       > mvn clean install
