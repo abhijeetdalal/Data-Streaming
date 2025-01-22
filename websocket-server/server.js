@@ -2,6 +2,9 @@ const WebSocket = require('ws');
 
 const wss = new WebSocket.Server({ port: 8082 });
 
+var count = 0;
+var countLimit = 10000;
+
 wss.on('connection', (ws) => {
     console.log('Client connected');
 
@@ -11,7 +14,11 @@ wss.on('connection', (ws) => {
 
     // Send a message to the client every second
     setInterval(() => {
-        ws.send('Hello from server');
+        if(count === countLimit) {
+            count = 0;
+        }
+        ws.send(`Hello from server ${count}`);
+        count = count + 1;
     }, 1000);
 
     ws.on('close', () => {
